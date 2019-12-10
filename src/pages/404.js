@@ -1,14 +1,20 @@
 import React from "react"
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
-
-export default NotFoundPage
+import Layout from "../components/Layout"
+import styles from "../css/error.module.css"
+import Banner from "../components/Banner"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+import SEO from "../components/SEO"
+export default function error() {
+  return (
+    <Layout>
+      <SEO title="Error" />
+      <header className={styles.error}>
+        <Banner title="oops it's a dead end">
+          <AniLink fade to="/" className="btn-white">
+            back to home page
+          </AniLink>
+        </Banner>
+      </header>
+    </Layout>
+  )
+}

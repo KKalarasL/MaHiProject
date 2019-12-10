@@ -1,34 +1,59 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: "MaHi",
+    description:
+      "Explore awesome worldwide tours & discover what makes each of them unique. Forget your daily routine & say yes to adventure",
+    author: "@kklstyl3",
+    twitterUsername: "@kklstyl3",
+    image: "/defaultBcg.jpg",
+    siteUrl: "https://mahiproject.netlify.com/",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: "aa6lmvvj10ja",
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: "coEg-s-TeNE4MIZnenmUau8zdPNpZZQc5LqeJ9dW6qU",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://gatsby-backroad-project.netlify.com",
+        sitemap: "https://gatsby-backroad-project.netlify.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-transition-link`,
+    `gatsby-plugin-playground`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/images/zeus-sword.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,,,
   ],
 }
