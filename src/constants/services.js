@@ -1,20 +1,20 @@
 import React from "react"
-import { FaWallet, FaTree, FaSocks } from "react-icons/fa"
+import { GiGreekTemple, GiBookshelf, GiCardBurn } from "react-icons/gi"
 
 export default [
   {
-    icon: <FaWallet />,
-    title: "saving money",
+    icon: <GiGreekTemple />,
+    title: "mythology",
     text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Null",
   },
   {
-    icon: <FaTree />,
-    title: "endless hiking",
+    icon: <GiBookshelf />,
+    title: "history",
     text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Null",
   },
   {
-    icon: <FaSocks />,
-    title: "amazing comfort",
+    icon: <GiCardBurn />,
+    title: "tcg game",
     text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Null",
   },
 ]
